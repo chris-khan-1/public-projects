@@ -1,0 +1,259 @@
+WindowManager:
+    MainWindow:
+    RaynersLane:
+    HarrowHill:
+    GreatPortland:
+
+<MainWindow>:
+    name: "main"
+    
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        
+        padding: 50
+        spacing: 20
+
+        BlueRoundedButton:
+            pos_hint:{'center_x': 0.5}
+            size_hint: (1, .3)
+            #background_color: (48/255,84/255,150/255)
+            #background_normal: ''
+            font_size: (root.width**2 + root.height**2) / 13**4
+            font_name: "DotMatrixBold"
+            text: "Rayners Lane"
+            on_release:
+                app.root.current = "ray"
+                root.manager.transition.direction = "left"
+
+        MaroonRoundedButton:
+            pos_hint:{'center_x': 0.5}
+            size_hint: (1, .3)
+            #background_color: (48/255,84/255,150/255)
+            #background_normal: ''
+            font_size: (root.width**2 + root.height**2) / 13**4
+            font_name: "DotMatrixBold"
+            text: "Harrow On The Hill"
+            on_release:
+                app.root.current = "hhill"
+                root.manager.transition.direction = "left"
+
+        YellowRoundedButton:
+            pos_hint:{'center_x': 0.5}
+            size_hint: (1, .3)
+            #background_color: (48/255,84/255,150/255)
+            #background_normal: ''
+            color: "000000"
+            font_size: (root.width**2 + root.height**2) / 13**4
+            font_name: "DotMatrixBold"
+            text: "Great Portland Street"
+            on_release:
+                app.root.current = "gport"
+                root.manager.transition.direction = "left"
+        
+        BlackRoundedButton:
+            pos_hint:{'center_x': 0.5}
+            size_hint: (1, .3)
+            color: "#ecec5c"
+            #background_color: (219/255,36/255,27/255)
+            #background_normal: ''
+            font_size: (root.width**2 + root.height**2) / 13**4
+            font_name: "DotMatrixBold"
+            text: "Way out"
+            on_release:
+                root.close_app()
+
+
+<RaynersLane>:
+    name: "ray"
+    
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+        
+        padding: 80
+        spacing: 350
+
+        # Label:
+        #     text:"Rayners Lane"
+        #     font_size: (root.width**2 + root.height**2) / 13**4
+        #     pos_hint: {"x":0.1, "top":0.9}
+        #     size_hint: 0.35, 0.15
+
+        Button:
+            pos_hint:{"x":0.2,"y":1}
+            size_hint: 0.6, 0.2
+            background_color: (2/255,25/255,165/255)
+            background_normal: ''
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "Refresh"
+            on_release:
+                root.build()
+
+        Button:
+            pos_hint:{"x":0.2,"y":0}
+            size_hint: 0.6, 0.2
+            background_color: "000000"
+            background_normal: ''
+            color: "#ecec5c"
+            font_size: (root.width**2 + root.height**2) / 14**4
+            font_name: "DotMatrixBold"
+            text: "Way out"
+            on_release:
+                root.clear()
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+        # BlackRoundedButton:
+        #     pos_hint:{"x":0.8,"y":1}
+        #     size_hint: (1, .3)
+        #     color: "#ecec5c"
+        #     font_size: (root.width**2 + root.height**2) / 13**4
+        #     font_name: "DotMatrixBold"
+        #     text: "Way out"
+        #     on_release:
+        #         root.close()
+
+
+
+<HarrowHill>:
+    name: "hhill"
+
+    BoxLayout:
+        orientation: "vertical"
+        # size: root.width, root.height
+        
+        padding: 80
+        spacing: 350
+
+        # Label:
+        #     text:"Harrow On The Hill"
+        #     font_size: (root.width**2 + root.height**2) / 13**4
+        #     pos_hint: {"x":0.1, "top":0.9}
+        #     size_hint: 0.35, 0.15
+
+        Button:
+            pos_hint:{"x":0.2,"y":1}
+            size_hint: 0.6, 0.2
+            background_color: (117/255,16/255,86/255)
+            background_normal: ''
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "Refresh"
+            on_release:
+                root.build()
+
+        Button:
+            pos_hint:{"x":0.2,"y":0}
+            size_hint: 0.6, 0.2
+            background_color: "000000"
+            background_normal: ''
+            color: "#ecec5c"
+            font_size: (root.width**2 + root.height**2) / 14**4
+            font_name: "DotMatrixBold"
+            text: "Way out"
+            on_release:
+                root.clear()
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+
+<GreatPortland>:
+    name: "gport"
+
+    BoxLayout:
+        orientation: "vertical"
+        # size: root.width, root.height
+        
+        padding: 80
+        spacing: 350
+
+        # Label:
+        #     text:"Great Portland Street"
+        #     font_size: (root.width**2 + root.height**2) / 13**4
+        #     pos_hint: {"x":0.1, "top":0.9}
+        #     size_hint: 0.35, 0.15
+
+        Button:
+            pos_hint:{"x":0.2,"y":1}
+            size_hint: 0.6, 0.2
+            background_color: (255/255,206/255,0/255)
+            color: "000000"
+            background_normal: ''
+            font_size: (root.width**2 + root.height**2) / 13**4
+            text: "Refresh"
+            on_release:
+                root.build()
+                
+        Button:
+            pos_hint:{"x":0.2,"y":0}
+            size_hint: 0.6, 0.2
+            background_color: "000000"
+            background_normal: ''
+            color: "#ecec5c"
+            font_size: (root.width**2 + root.height**2) / 14**4
+            font_name: "DotMatrixBold"
+            text: "Way out"
+            on_release:
+                root.clear()
+                app.root.current = "main"
+                root.manager.transition.direction = "right"
+
+<BlueRoundedButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (2/255,25/255,165/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [45]
+
+<YellowRoundedButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (255/255,206/255,0/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [45]
+
+<BlackRoundedButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (0/255,0/255,0/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [45]
+
+<MaroonRoundedButton@Button>
+    background_color: (0,0,0,0)
+    background_normal: ''
+    canvas.before:
+        Color:
+            rgba: (117/255,16/255,86/255,1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [45]
+
+
+<-MDDataTable>:
+    background_color: 1, 1, 1, 1  # added for this example
+    MDCard:
+        id: container
+        orientation: "vertical"
+        elevation: root.elevation
+        padding: "24dp", "0dp", "24dp", "0dp"
+        # canvas added for this change
+        canvas:
+            Color:
+                rgba: root.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
