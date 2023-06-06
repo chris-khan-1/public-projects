@@ -1,3 +1,3 @@
 # Public Projects
 
-This repository hold the projects I have worked.
+This repository holds the projects I have worked.
